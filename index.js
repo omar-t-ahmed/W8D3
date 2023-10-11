@@ -119,3 +119,12 @@ function innerBubbleSortLoop(arr, i, madeAnySwaps, outerBubbleSortLoop) {
 
 // innerBubbleSortLoop([3,2,1], 0, false, () => {console.log('in outer bubble sort')})
 absurdBubbleSort([3,2,1], (arr) => {console.log(arr)})
+
+
+Function.prototype.myThrottle = (interval) => {
+    let tooSoon = false
+    
+    return function(tooSoon) {
+        
+    }
+}
