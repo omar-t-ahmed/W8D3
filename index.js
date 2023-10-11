@@ -48,7 +48,7 @@ const reader = readline.createInterface({
 });
 
 function addNumbers(sum, numsLeft, completionCallback) {
-    if (numsLeft <= 0) {
+    if (numsLeft === 0) {
         reader.close();
         return completionCallback(sum);
     } 
@@ -62,4 +62,13 @@ function addNumbers(sum, numsLeft, completionCallback) {
     }
 )}
 
-addNumbers(0, 3, sum => console.log(`Total Sum: ${sum}`));
+addNumbers(0, 3, function(sum) { 
+  console.log(`Total Sum: ${sum}`)
+});
+
+
+Function.prototype.myBind = function(context) {
+  return () => {
+    this.apply(context)
+  };
+}
