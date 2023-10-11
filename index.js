@@ -41,11 +41,11 @@ class Clock {
 /////////////////////////////////////
 
 
-const readline = require("readline");
-const reader = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
+// const readline = require("readline");
+// const reader = readline.createInterface({
+//     input: process.stdin,
+//     output: process.stdout
+// });
 
 function addNumbers(sum, numsLeft, completionCallback) {
     if (numsLeft === 0) {
@@ -63,12 +63,44 @@ function addNumbers(sum, numsLeft, completionCallback) {
 )}
 
 addNumbers(0, 3, function(sum) { 
-  console.log(`Total Sum: ${sum}`)
+    console.log(`Total Sum: ${sum}`)
 });
 
 
 Function.prototype.myBind = function(context) {
-  return () => {
-    this.apply(context)
-  };
+    return () => {
+        this.apply(context)
+    };
+}
+
+///////////////////////////////////////////////////////////////
+
+const readline = require("readline");
+const reader = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+function absurdBubbleSort(arr, sortCompletionCallback) {
+
+}
+
+function innerBubbleSortLoop(arr, i, madeAnySwaps, outerBubbleSortLoop) {
+    if (i < arr.length - 1) {
+        askIfGreaterThan(arr[i], arr[i + 1], () => {
+            [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]]
+            
+        })
+    }
+}
+
+function askIfGreaterThan(el1, el2, callback) {
+    reader.question(`is ${el1} greater than ${el2}`, function(answer) {
+        if (answer === 'yes') {
+            callback(true)
+        } else if (answer === 'no') {
+            callback(false)
+        }
+    }
+    )
 }
